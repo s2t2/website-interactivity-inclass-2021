@@ -86,6 +86,9 @@
         -->
         <button class="btn btn-primary" id="click-me">Click Me</button>
         <p style="display:inline">Click Count: <span id="click-count">(loading)</span></p>
+
+
+
       </div>
 
       <!--
@@ -186,6 +189,33 @@
     <script type="text/javascript">
 
         console.log("Thanks for the page visit!")
+
+
+        //
+        // BUTTON
+        //
+
+        var clickMeButton = document.getElementById("click-me")
+        var clickCountSpan = document.getElementById("click-count")
+        var clickCount = 0
+
+        function handleClick() {
+            //var anotherCounter = 0
+            console.log("---------------------")
+            console.log("YOU CLICKED ME!")
+            clickCount += 1 // same as ... `clickCount = clickCount + 1`
+            console.log("CLICK COUNT:", clickCount)
+            clickCountSpan.textContent = clickCount
+        }
+
+        clickMeButton.addEventListener("click", handleClick)
+
+        // example invocation of the function:
+        //handleClick()
+
+        // THE CONSOLE MAKES USE OF THE GLOBAL SCOPE
+
+        // anotherCounter is not accessible outside the scope of the function
 
     </script>
   </body>
