@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM and Interactivity Review</title>
+</head>
+<body>
+    <h1>DOM and Website Interactivity Review</h1>
+    <div>
+        <p>User Name:</p>
+        <input type="text" name="user-name" id="my-user-name" value="Jon Snow" placeholder="Jon Snow">
+
+        <p>Stock:</p>
+        <select name="stock-symbol" id="my-stock-selector">
+            <option value="MSFT">Microsoft (MSFT)</option>
+            <option value="GOOGL">Google (GOOGL)</option>
+            <option value="TSLA">Tesla (TSLA)</option>
+        </select>
+        <button id="my-btn">Go!</button>
+    </div>
+    <div>
+        <h2>Selected Stock:
+            <span id="my-stock-display">TODO</span>
+        </h2>
+    </div>
+
+
+    <script type="text/javascript">
+        console.log("Hello this is a review...")
+        // todo: respond to button clicks by:
+        // ... 1) logging the selected stock symbol and the user name values to the console
+        // ... 2) overwriting the heading placeholder with the selected stock symbol
+
+        // var x = 5
+        // console.log(x)
+
+        var myButton = document.getElementById("my-btn")
+
+        var inputUserName = document.getElementById("my-user-name")
+        var stockSelector = document.getElementById("my-stock-selector")
+
+        var stockDisplay = document.getElementById("my-stock-display")
+
+        function handleClick(){
+            console.log("YOU CLICKED ME")
+            console.log("USER NAME:", inputUserName.value)
+            console.log("STOCK SYMBOL:", stockSelector.value)
+
+            // update the page!
+            stockDisplay.innerText = stockSelector.value
+        }
+
+        //handleClick()
+
+        myButton.addEventListener("click", handleClick, false)
+
+    </script>
+</body>
+</html>
